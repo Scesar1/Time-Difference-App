@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="?attr/colorOnPrimary">
+
+    <Button
+        android:id="@+id/calcButton"
+        style="Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="@string/calculate"
+        android:textSize="36sp" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/learn"
+        android:id="@+id/learnButton"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/calcButton"
+        android:layout_marginTop="100dp"
+        android:textSize="36sp"
+        />
+
+    <RadioGroup
+        android:checkedButton="@+id/military"
+        android:id="@+id/toggle"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/learnButton"
+        android:layout_marginTop="148dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/purple_out_line"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginStart="1dp"
+            android:id="@+id/standard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:background="@drawable/toggle"
+            android:text="@string/standardtime"
+            android:textColor="?attr/colorOnBackground" />
+
+        <RadioButton
+            android:layout_marginEnd="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:id="@+id/military"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:background="@drawable/toggle"
+            android:gravity="center"
+            android:text="@string/militarytime"
+            android:textColor="?attr/colorOnBackground" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/learnButton"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="155dp"
+        android:textSize="24sp"
+        android:text="@string/clock_mode"
+        android:id="@+id/clock_mode"/>
+
+
+</RelativeLayout>

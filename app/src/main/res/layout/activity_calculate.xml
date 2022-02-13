@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorOnPrimary"
+    tools:context=".CalculateActivity">
+
+
+    <TextView
+        android:id="@+id/startText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="200dp"
+        android:text="@string/start"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/endText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startText"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="200dp"
+        android:text="@string/end"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/diffText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/endText"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="200dp"
+        android:text="@string/diff"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/hourText"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:inputType="number"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:shadowColor="?attr/colorOnPrimary"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="@string/_08"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/minText"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:inputType="number"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:shadowColor="?attr/colorOnPrimary"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="@string/_00"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+
+    <Spinner
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:background="@drawable/text_back"
+        android:layout_marginStart="310dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="60dp"
+        android:id="@+id/timeSelector1"
+        android:textAlignment="center"
+
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/separate"
+        android:textSize="40sp" />
+
+
+
+    <EditText
+        android:id="@+id/hourText2"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/startText"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:inputType="number"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:shadowColor="?attr/colorOnPrimary"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="@string/_08"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/minText2"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/startText"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:inputType="number"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:shadowColor="?attr/colorOnPrimary"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="@string/_00"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+
+    <Spinner
+        android:layout_width="70dp"
+        android:layout_below="@+id/startText"
+        android:layout_height="40dp"
+        android:background="@drawable/text_back"
+        android:layout_marginStart="310dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="60dp"
+        android:id="@+id/timeSelector2"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/startText"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/separate"
+        android:inputType="none"
+        android:textSize="40sp" />
+
+
+    <TextView
+        android:id="@+id/hourText3"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:paddingTop="5sp"
+        android:layout_below="@+id/endText"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:shadowColor="?attr/colorOnPrimary"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:textAlignment="center"
+        android:inputType="none"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/minText3"
+        android:layout_below="@id/endText"
+        android:paddingTop="5sp"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:shadowColor="?attr/colorOnPrimary"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:textAlignment="center"
+        android:inputType="none"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/endText"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="305dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/separate"
+        android:inputType="none"
+        android:textSize="40sp" />
+
+    <ImageButton
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/hourglassCalc"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/endText"
+        android:background="@android:color/transparent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@mipmap/hourglass_foreground"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\?"
+        android:textSize="100sp"
+        android:inputType="none"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/endText"
+        android:layout_marginTop="80dp"
+        android:textColor="?attr/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/hrTxt"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:paddingTop="5sp"
+        android:layout_below="@+id/hourText3"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:maxLength="2"
+        android:maxLines="1"
+        android:shadowColor="?attr/colorOnPrimary"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:text="@string/hr"
+        android:textAlignment="center"
+        android:inputType="none"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/minTxt"
+        android:layout_below="@id/minText3"
+        android:paddingTop="5sp"
+        android:text="@string/min"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:shadowColor="?attr/colorOnPrimary"
+        android:shadowDx="1.5"
+        android:shadowDy="1.3"
+        android:shadowRadius="1.6"
+        android:textAlignment="center"
+        android:inputType="none"
+        android:textSize="30sp" />
+
+
+
+
+
+</RelativeLayout>

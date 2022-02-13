@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Time Difference</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="learn">LEARN</string>
+    <string name="clock_mode">CLOCK MODE</string>
+    <string name="standard">12hr</string>
+    <string name="military">24hr</string>
+    <string name="standardtime">12hr</string>
+    <string name="militarytime">24hr</string>
+    <string name="start">START</string>
+    <string name="end">END</string>
+    <string name="diff">DIFF</string>
+    <string name="_08">08</string>
+    <string name="separate">:</string>
+    <string name="_00">00</string>
+    <string name="hr">HR</string>
+    <string name="min">MIN</string>
+
+</resources>
