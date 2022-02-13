@@ -99,7 +99,7 @@ public class CalculateActivity extends AppCompatActivity {
 
         int hour2 = Integer.parseInt(endHour.getText().toString());
         int min2 = Integer.parseInt(endMinute.getText().toString());
-
+        //Converts the time to minutes
         Integer minTotal1 = hour1 * 60 + min1;
         Integer minTotal2 = hour2 * 60 + min2;
 
