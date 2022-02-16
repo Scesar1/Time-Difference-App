@@ -15,5 +15,10 @@
     <string name="_00">00</string>
     <string name="hr">HR</string>
     <string name="min">MIN</string>
+    <string name="left_arrow"><![CDATA[<--------------------]]></string>
+    <string name="retry">Retry</string>
+    <string name="next">Next</string>
+    <string name="easy_result">Easy Result</string>
+    <string name="check">Check</string>
 
 </resources>
