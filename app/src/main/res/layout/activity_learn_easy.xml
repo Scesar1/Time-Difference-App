@@ -15,7 +15,8 @@
         android:scaleType="centerInside"
         android:layout_centerVertical="true"
         android:background="@android:color/transparent"
-        app:srcCompat="@mipmap/hourglass_foreground" />
+        app:srcCompat="@mipmap/hourglass_foreground"
+        />
 
     <ImageButton
         android:id="@+id/mediumHourGlass"
