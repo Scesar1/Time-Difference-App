@@ -1,5 +1,6 @@
 package com.example.timedifference;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -7,10 +8,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String LOG_TAG = "LOG";
     private SharedPreferences myPrefs;
     private Integer state;
     private RadioGroup rgClockMode;
@@ -23,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         myPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        SharedPreferences.Editor peditor = myPrefs.edit();
-        peditor.putInt("toggleState", 1);
-        peditor.apply();
 
         Button calculateButton = findViewById(R.id.calcButton);
         rgClockMode = findViewById(R.id.toggle);
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CalculateActivity.class);
         startActivity(intent);
     }
+
 
     @Override
     protected void onStart() {

@@ -31,9 +31,10 @@ public class CalculateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calculate);
         Intent intent = getIntent();
 
+        
         Context context = getApplicationContext();
         myPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        state = myPrefs.getInt("toggleState", 1);
+        state = myPrefs.getInt("toggleState", 0);
 
         Spinner timeSelector1 = findViewById(R.id.timeSelector1);
         timeSelector1.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, time));
