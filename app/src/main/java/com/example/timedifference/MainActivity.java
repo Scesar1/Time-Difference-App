@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button calculateButton = findViewById(R.id.calcButton);
+        Button learnButton = findViewById(R.id.learnButton);
         rgClockMode = findViewById(R.id.toggle);
 
         rgClockMode.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -47,10 +48,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         calculateButton.setOnClickListener(view -> startCalculateActivity());
+        learnButton.setOnClickListener(view -> startLearnActivity());
     }
 
     public void startCalculateActivity() {
         Intent intent = new Intent(this, CalculateActivity.class);
+        startActivity(intent);
+    }
+
+    public void startLearnActivity() {
+        Intent intent = new Intent(this, LearnEasyActivity.class);
         startActivity(intent);
     }
 

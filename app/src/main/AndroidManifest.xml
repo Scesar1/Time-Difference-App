@@ -10,9 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TimeDifference">
         <activity
-            android:name=".CalculateActivity"
+            android:name=".LearnEasyResultActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".LearnEasyActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CalculateActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
