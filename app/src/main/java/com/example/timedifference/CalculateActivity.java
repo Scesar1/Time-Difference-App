@@ -30,6 +30,7 @@ public class CalculateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate);
         Intent intent = getIntent();
+        
 
         
         Context context = getApplicationContext();

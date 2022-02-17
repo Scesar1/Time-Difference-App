@@ -16,72 +16,58 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class LearnEasyActivity extends AppCompatActivity{
     private Integer state;
     private SharedPreferences myPrefs;
-    private Integer choiceDiff;
+    private Integer choiceDiff, correctChoice, selectedGlass;
+    private Time startTime, endTime;
+    private Button retryButton, nextButton, checkButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_easy);
 
         // Set retry and and next buttons to be invisible initially
-        Button retryButton = findViewById(R.id.retryButton);
-        retryButton.setVisibility(View.GONE);
-        Button nextButton = findViewById(R.id.nextButton);
-        nextButton.setVisibility(View.GONE);
+        retryButton = findViewById(R.id.retryButton);
+        retryButton.setVisibility(View.INVISIBLE);
+        nextButton = findViewById(R.id.nextButton);
+        nextButton.setVisibility(View.INVISIBLE);
+
 
         Context context = getApplicationContext();
         myPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         state = myPrefs.getInt("toggleState", 0);
         TextView startTimeView = findViewById(R.id.textView);
         TextView endTimeView = findViewById(R.id.textView2);
-        int correctChoice = 0;
+        correctChoice = 0;
+
+        Random random = new Random();
+        startTime = new Time(random.nextInt(23), random.nextInt(59));
+        endTime = new Time(random.nextInt(23), random.nextInt(59));
         if (state == 0) {
-            Random random = new Random();
-            Time startTime = new Time(random.nextInt(23), random.nextInt(59));
-            Time endTime = new Time(random.nextInt(23), random.nextInt(59));
             startTimeView.setText(startTime.toString());
             endTimeView.setText(endTime.toString());
-            int diffHour = endTime.subtract(startTime).getHour();
-
-            // Find what button is correct
-            if (diffHour < 8) {
-                correctChoice = 1;
-            } else if (diffHour >= 8 && diffHour <= 16) {
-                correctChoice = 2;
-            } else {
-                correctChoice = 3;
-            }
         } else {
-            Random random = new Random();
-            int startTimeHour = random.nextInt(23);
-            int startTimeMinute = random.nextInt(59);
-
-            int endTimeHour = random.nextInt(23);
-            int endTimeMinute = random.nextInt(59);
-
-
-            startTimeView.setText(String.format("%2d:%02d", startTimeHour, startTimeMinute));
-            endTimeView.setText(String.format("%2d:%02d", endTimeHour, endTimeMinute));
-
-            int minTotal1 = startTimeHour * 60 + startTimeMinute;
-            int minTotal2 = endTimeHour * 60 + endTimeMinute;
-
-            int hourResult = Math.abs(minTotal1 - minTotal2) / 60;
-            int minuteResult = Math.abs(minTotal1 - minTotal2) % 60;
-
-            int diffTime = hourResult * 60 + minuteResult;
-            if (diffTime < 480) {
-                correctChoice = 1;
-            } else if (diffTime <= 960) {
-                correctChoice = 2;
-            } else {
-                correctChoice = 3;
-            }
+            String startTimeString = String.format("%2d:%02d", startTime.getHour(), startTime.getMin());
+            String endTimeString = String.format("%2d:%02d", endTime.getHour(), endTime.getMin());
+            startTimeView.setText(startTimeString);
+            endTimeView.setText(endTimeString);
         }
+        int diffHour = endTime.subtract(startTime).getHour();
+
+        // Find what button is correct
+        if (diffHour < 8) {
+            correctChoice = 1;
+        } else if (diffHour >= 8 && diffHour <= 16) {
+            correctChoice = 2;
+        } else {
+            correctChoice = 3;
+        }
+
+
 
         // Generate and display time
 
@@ -94,13 +80,12 @@ public class LearnEasyActivity extends AppCompatActivity{
         ImageButton medGlass = findViewById(R.id.mediumHourGlass);
         ImageButton largeGlass = findViewById(R.id.largeHourGlass);
 
-        final int[] selectedGlass = {0};
         smallGlass.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 smallGlass.setBackground(AppCompatResources.getDrawable(LearnEasyActivity.this, R.drawable.hourglass_select));
                 medGlass.setBackgroundColor(Color.TRANSPARENT);
                 largeGlass.setBackgroundColor(Color.TRANSPARENT);
-                selectedGlass[0] = 1;
+                selectedGlass= 1;
             }
         });
 
@@ -111,7 +96,7 @@ public class LearnEasyActivity extends AppCompatActivity{
                 smallGlass.setBackgroundColor(Color.TRANSPARENT);
                 largeGlass.setBackgroundColor(Color.TRANSPARENT);
 
-                selectedGlass[0] = 2;
+                selectedGlass = 2;
             }
         });
 
@@ -120,33 +105,94 @@ public class LearnEasyActivity extends AppCompatActivity{
                 largeGlass.setBackground(AppCompatResources.getDrawable(LearnEasyActivity.this, R.drawable.hourglass_select));
                 medGlass.setBackgroundColor(Color.TRANSPARENT);
                 smallGlass.setBackgroundColor(Color.TRANSPARENT);
-                selectedGlass[0] = 3;
+                selectedGlass = 3;
             }
         });
 
 
 
-        Button checkButton = findViewById(R.id.checkButton);
-        int finalCorrectChoice = correctChoice;
+        checkButton = findViewById(R.id.checkButton);
+
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choiceDiff = finalCorrectChoice - selectedGlass[0];
-                SharedPreferences.Editor peditor = myPrefs.edit();
-                peditor.putInt("choice", choiceDiff);
-                peditor.apply();
-                startResultScreenActivity();
+                ImageView smallCorrectImage = findViewById(R.id.smallCorrectImage);
+                ImageView smallWrongImage = findViewById(R.id.smallWrongImage);
+
+                ImageView mediumCorrectImage = findViewById(R.id.mediumCorrectImage);
+                ImageView mediumWrongImage = findViewById(R.id.mediumWrongImage);
+
+                ImageView largeCorrectImage = findViewById(R.id.largeCorrectImage);
+                ImageView largeWrongImage = findViewById(R.id.largeWrongImage);
+
+                choiceDiff = correctChoice - selectedGlass;
+
+                if (selectedGlass == 1 && correctChoice == 1) {
+                    smallCorrectImage.setVisibility(View.VISIBLE);
+                } else if (selectedGlass == 1) {
+                    smallWrongImage.setVisibility(View.VISIBLE);
+                }
+
+                if (selectedGlass == 2 && correctChoice == 2) {
+                    mediumCorrectImage.setVisibility(View.VISIBLE);
+                } else if (selectedGlass == 2) {
+                    mediumWrongImage.setVisibility(View.VISIBLE);
+                }
+
+                if (selectedGlass == 3 && correctChoice == 3) {
+                    largeCorrectImage.setVisibility(View.VISIBLE);
+                } else if (selectedGlass == 3) {
+                    largeWrongImage.setVisibility(View.VISIBLE);
+                }
+
+                smallGlass.setEnabled(false);
+                medGlass.setEnabled(false);
+                largeGlass.setEnabled(false);
+
+
+                checkButton.setVisibility(View.INVISIBLE);
+                retryButton = findViewById(R.id.retryButton);
+                nextButton = findViewById(R.id.nextButton);
+
+                retryButton.setVisibility(View.VISIBLE);
+                nextButton.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        retryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recreate();
+            }
+        });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startLearnHardActivity();
             }
         });
 
 
 
+
+
     }
 
-    public void startResultScreenActivity() {
-        Intent intent = new Intent(LearnEasyActivity.this, LearnEasyResultActivity.class);
+    private void startLearnHardActivity() {
+        Intent intent = new Intent(LearnEasyActivity.this, LearnHardActivity.class);
+
+        SharedPreferences.Editor peditor = myPrefs.edit();
+        peditor.putInt("startTimeHour", startTime.getHour());
+        peditor.putInt("startTimeMinute", startTime.getMin());
+        peditor.putInt("endTimeHour", endTime.getHour());
+        peditor.putInt("endTimeMinute", endTime.getMin());
+        peditor.apply();
+
         startActivity(intent);
     }
+
 
     @Override
     protected void onPause() {
