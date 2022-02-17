@@ -17,7 +17,7 @@
         <activity
             android:name=".LearnHardActivity"
             android:exported="false"
-            android:label="Learn Easy"
+            android:label="Learn Hard"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CalculateActivity"

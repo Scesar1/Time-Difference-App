@@ -36,6 +36,9 @@ public class LearnEasyActivity extends AppCompatActivity{
         nextButton = findViewById(R.id.nextButton);
         nextButton.setVisibility(View.INVISIBLE);
 
+        checkButton = findViewById(R.id.checkButton);
+        checkButton.setEnabled(false);
+
 
         Context context = getApplicationContext();
         myPrefs = PreferenceManager.getDefaultSharedPreferences(context);
@@ -86,6 +89,7 @@ public class LearnEasyActivity extends AppCompatActivity{
                 medGlass.setBackgroundColor(Color.TRANSPARENT);
                 largeGlass.setBackgroundColor(Color.TRANSPARENT);
                 selectedGlass= 1;
+                checkButton.setEnabled(true);
             }
         });
 
@@ -95,8 +99,8 @@ public class LearnEasyActivity extends AppCompatActivity{
                 medGlass.setBackground(AppCompatResources.getDrawable(LearnEasyActivity.this, R.drawable.hourglass_select));
                 smallGlass.setBackgroundColor(Color.TRANSPARENT);
                 largeGlass.setBackgroundColor(Color.TRANSPARENT);
-
                 selectedGlass = 2;
+                checkButton.setEnabled(true);
             }
         });
 
@@ -106,12 +110,13 @@ public class LearnEasyActivity extends AppCompatActivity{
                 medGlass.setBackgroundColor(Color.TRANSPARENT);
                 smallGlass.setBackgroundColor(Color.TRANSPARENT);
                 selectedGlass = 3;
+                checkButton.setEnabled(true);
             }
         });
 
 
 
-        checkButton = findViewById(R.id.checkButton);
+
 
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override

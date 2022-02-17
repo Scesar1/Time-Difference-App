@@ -70,27 +70,26 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/smallHourGlass"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="70dp"
         android:gravity="center"
         android:text="@string/start"
-        android:textSize="30sp"
-        android:layout_above="@id/smallHourGlass"
-        android:layout_marginBottom="70dp"
-        android:layout_marginStart="35dp"/>
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/smallHourGlass"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="20dp"
-        android:textSize="30sp"
+        android:layout_marginBottom="70dp"
+        android:layout_toEndOf="@+id/textView3"
         android:gravity="center"
         android:text="@string/end"
-        android:layout_toEndOf="@+id/textView3"
-        android:layout_above="@id/smallHourGlass"
-        android:layout_marginBottom="70dp"
-        android:layout_marginStart="150dp"
-        />
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/checkButton"
@@ -117,8 +116,8 @@
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_below="@id/smallHourGlass"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="61dp"
         android:text="@string/next"
         android:textSize="30sp" />
 
@@ -151,34 +150,34 @@
 
     <ImageView
         android:id="@+id/smallCorrectImage"
-        android:layout_width="85dp"
-        android:layout_height="94dp"
+        android:layout_width="96dp"
+        android:layout_height="95dp"
         android:visibility="invisible"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="28dp"
         android:background="@android:color/transparent"
         app:srcCompat="@mipmap/checkmark_foreground" />
 
     <ImageView
         android:id="@+id/mediumCorrectImage"
-        android:layout_width="85dp"
-        android:layout_height="94dp"
+        android:layout_width="96dp"
+        android:layout_height="95dp"
         android:layout_alignParentStart="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="156dp"
+        android:layout_marginStart="150dp"
         android:background="@android:color/transparent"
         android:visibility="invisible"
         app:srcCompat="@mipmap/checkmark_foreground" />
 
     <ImageView
         android:id="@+id/largeCorrectImage"
-        android:layout_width="85dp"
-        android:layout_height="94dp"
+        android:layout_width="96dp"
+        android:layout_height="95dp"
         android:visibility="invisible"
         android:layout_alignParentStart="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="278dp"
+        android:layout_marginStart="272dp"
         android:background="@android:color/transparent"
         app:srcCompat="@mipmap/checkmark_foreground" />
 
