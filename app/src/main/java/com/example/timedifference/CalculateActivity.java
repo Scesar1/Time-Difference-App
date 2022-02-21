@@ -49,6 +49,10 @@ public class CalculateActivity extends AppCompatActivity {
         endHour = findViewById(R.id.hourText2);
         endMinute = findViewById(R.id.minText2);
 
+        if (state == 1) {
+            endHour.setText("20");
+        }
+
         calcButton = findViewById(R.id.hourglassCalc);
 
 

@@ -103,7 +103,6 @@
         android:textSize="40sp" />
 
 
-
     <EditText
         android:id="@+id/hourText2"
         android:layout_width="70dp"
