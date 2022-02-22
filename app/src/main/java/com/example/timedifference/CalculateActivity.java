@@ -68,19 +68,19 @@ public class CalculateActivity extends AppCompatActivity {
 
                 if (hour1 > 24 || hour1 < 0) {
                     startHour.setText("00");
-                    Toast.makeText(CalculateActivity.this, "INVALID NUMBER", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CalculateActivity.this, "INVALID HOUR", Toast.LENGTH_SHORT).show();
                 }
                 if (hour2 > 24 || hour1 < 0) {
                     endHour.setText("00");
-                    Toast.makeText(CalculateActivity.this, "INVALID NUMBER", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CalculateActivity.this, "INVALID HOUR", Toast.LENGTH_SHORT).show();
                 }
                 if (min1 > 59 || min1 < 0) {
                     startMinute.setText("00");
-                    Toast.makeText(CalculateActivity.this, "INVALID NUMBER", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CalculateActivity.this, "INVALID MINUTE", Toast.LENGTH_SHORT).show();
                 }
                 if (min2 > 59 || min2 < 0) {
                     endMinute.setText("00");
-                    Toast.makeText(CalculateActivity.this, "INVALID NUMBER", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CalculateActivity.this, "INVALID MINUTE", Toast.LENGTH_SHORT).show();
                 }
 
                 getTimeDifference();
