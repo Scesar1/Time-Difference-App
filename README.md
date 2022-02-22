@@ -1,7 +1,10 @@
 # Time-Difference-App
 One of the most interesting changes we made to the layout was that in LearnHard, we displayed the progress of the slider, so the 
 user knew exactly how much progress he/she made. The original design did not include this, and we felt that it would be a lot
-harder if user had to exactly guess the progress of the bar as well. Apart from this, not many interesting changes.
+harder if user had to exactly guess the progress of the bar as well. Another change we made from the original design was the different 
+theme that we used. We opted for a white background light theme, used Material Design 3 buttons and implemented a dark mode theme, which you can 
+see if the emulator is switched to dark mode in the display settings. We chose this approach because
+we felt like it would make the app feel more like an authenthic modern android application. Apart from this, not many interesting changes.
 
 No, we didn't think it was necessary to have 6 different activities. If we would have 6 different activities, they would
 really only differ marginally (in the appearance, and slightly functional sense). That is, the results screen and the guessing 
